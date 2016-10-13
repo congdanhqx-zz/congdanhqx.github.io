@@ -1,4 +1,4 @@
 ---
 slug: cpp
-name: C++ (language)
+name: C++
 ---

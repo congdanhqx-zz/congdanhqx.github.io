@@ -2,6 +2,7 @@
 title: std::enable_shared_from_this
 layout: post
 date: 2016-10-13 20:00:00 +07:00
+author: ĐOÀN Trần Công Danh
 categories: programming
 tags: [cpp, smart-pointer]
 ---
