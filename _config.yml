@@ -19,3 +19,8 @@ comments: true
 
 # Build settings
 markdown: kramdown
+
+defaults:
+  -
+    values:
+      comments: true
