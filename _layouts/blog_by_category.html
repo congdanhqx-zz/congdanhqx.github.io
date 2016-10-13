@@ -7,8 +7,8 @@ layout: default
 <h1>Articles by category: {{ page.name }}</h1>
 
   <ul class="post-list">
-    {% if site.category[page.slug] %}
-        {% for post in site.category[page.slug] %}
+    {% if site.categories[page.slug] %}
+        {% for post in site.categories[page.slug] %}
           <li>
             <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
             <h2>
