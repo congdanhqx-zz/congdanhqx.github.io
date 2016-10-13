@@ -19,7 +19,9 @@ comments: true
 
 # Build settings
 markdown: kramdown
-
+sass:
+  style: compressed
+  
 collections:
   my_categories:
     output: true
