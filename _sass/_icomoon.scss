@@ -22,8 +22,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icon-quill:before {
+  content: "\e907";
+}
+
 .icon-diamonds:before {
   content: "\e919";
+}
+.icon-folder-open:before {
+  content: "\e930";
 }
 .icon-price-tag:before {
   content: "\e935";
@@ -31,4 +38,7 @@
 
 .icon-price-tags:before {
   content: "\e936";
+}
+.icon-calendar:before {
+  content: "\e953";
 }
