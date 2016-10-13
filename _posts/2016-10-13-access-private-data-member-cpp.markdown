@@ -2,7 +2,8 @@
 title: Access private member data in C++
 layout: post
 date: 2016-10-13 21:25:00 +07:00
-categories: c++
+categories: programming
+tags: [c++, trick, template]
 ---
 
 ```cpp
