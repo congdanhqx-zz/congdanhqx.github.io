@@ -3,7 +3,7 @@ title: std::enable_shared_from_this
 layout: post
 date: 2016-10-13 20:00:00 +07:00
 categories: programming
-tags: [c++, smart-pointer]
+tags: [cpp, smart-pointer]
 ---
 
 I have had a hard time to understand why do we need

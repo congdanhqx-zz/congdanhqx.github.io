@@ -3,7 +3,7 @@ title: C Restrict Pointer
 layout: post
 date: 2016-08-23 23:45:00 +07:00
 categories: programming
-tags: [c, pointer]
+tags: [c-language, pointer]
 ---
 
 Let's examine this function:
