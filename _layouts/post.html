@@ -3,7 +3,7 @@ layout: default
 ---
 <!-- from http://www.minddust.com/post/alternative-tags-and-categories-on-github-pages/ -->
 {% if page.categories.size > 0 %}
-  {% capture categories_content %}in{% endcapture %}
+  {% capture categories_content %}in {% endcapture %}
   {% for post_category in page.categories %}
     {% assign category = site.my_categories | where: "slug", post_category %}
     {% if category %}

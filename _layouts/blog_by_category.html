@@ -4,11 +4,11 @@ layout: default
 
 <div class="home">
 
-<h1>Articles by category: {{ page.category }}</h1>
+<h1>Articles by category: {{ page.name }}</h1>
 
   <ul class="post-list">
-    {% if site.category[page.category] %}
-        {% for post in site.category[page.category] %}
+    {% if site.category[page.slug] %}
+        {% for post in site.category[page.slug] %}
           <li>
             <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
             <h2>

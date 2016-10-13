@@ -4,11 +4,11 @@ layout: default
 
 <div class="home">
 
-<h1>Articles by tag: {{ page.tag }}</h1>
+<h1>Articles by tag: {{ page.name }}</h1>
 
   <ul class="post-list">
-    {% if site.tags[page.tag] %}
-        {% for post in site.tags[page.tag] %}
+    {% if site.tags[page.slug] %}
+        {% for post in site.tags[page.slug] %}
           <li>
             <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
             <h2>
