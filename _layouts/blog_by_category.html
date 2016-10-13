@@ -1,0 +1,22 @@
+---
+layout: default
+---
+
+<div class="home">
+
+<h1>Articles by category: {{ page.category }}</h1>
+
+  <ul class="post-list">
+    {% if site.category[page.category] %}
+        {% for post in site.category[page.category] %}
+          <li>
+            <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <h2>
+              <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            </h2>
+          </li>
+        {% endfor %}
+    {% else %}
+        <p>There are no posts for this category.</p>
+    {% endif %}
+</div>

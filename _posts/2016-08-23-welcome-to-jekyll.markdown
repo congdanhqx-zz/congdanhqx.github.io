@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2016-08-23 23:31:18 +0700
-categories: jekyll update
+categories: jekyll update general
 ---
 
 Hello,
