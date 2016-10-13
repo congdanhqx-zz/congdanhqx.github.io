@@ -40,6 +40,7 @@ int main()
     std::shared_ptr<Bad> bp2 = bp1->getptr();
     std::cout << "bp2.use_count() = " << bp2.use_count() << '\n';
 } // UB: double-delete of Bad
+```
 
 At this very moment, I realise that it's used to get the `std::shared_ptr` from
 the raw pointer which is passed around some where like this:
@@ -78,6 +79,7 @@ int main()
     foo(gp1.get());
     std::cout << "gp2.use_count() = " << gp2.use_count() << '\n';
 }
+```
 
 
   [1]: http://en.cppreference.com/w/cpp/memory/enable_shared_from_this
