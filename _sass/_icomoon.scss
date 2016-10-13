@@ -22,7 +22,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.icon-diamonds:before {
+  content: "\e919";
+}
 .icon-price-tag:before {
   content: "\e935";
 }
