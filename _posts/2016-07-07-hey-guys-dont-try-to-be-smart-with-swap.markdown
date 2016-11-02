@@ -10,7 +10,7 @@ tags: [cpp, optimization]
 ---
 
 Recently, someone told me that we should swap 2 variable without a temporary
-variable like the function swap2 and swap3 of the below example because it
+variable like the function `swap2` and `swap3` of the below example because it
 should be faster.
 
 Today, I want to do some benchmark to compare those implementations to prove that
@@ -32,6 +32,7 @@ void swap1(void)
 // Don't try to be smart guy
 void swap2(void) 
 {
+  // there's a potential ub here
   a ^= b;
   b ^= a;
   a ^= b;
@@ -40,6 +41,7 @@ void swap2(void)
 // Don't try to be smart guy
 void swap3(void)
 {
+  // Beware, integer overflow is undefined behavior in C++
   b += a;
   a = b - a;
   b -= a;
@@ -52,42 +54,8 @@ void swap4(void)
 }
 ```
 
-#include <memory>
-
-int a;
-int b;
-void swap1(void) 
-{
-  int t = a;
-  a = b;
-  b = t;
-}
-
-// Don't try to be smart guy
-void swap2(void) 
-{
-  a ^= b;
-  b ^= a;
-  a ^= b;
-}
-
-// Don't try to be smart guy
-void swap3(void)
-{
-  b += a;
-  a = b - a;
-  b -= a;
-}
-
-// Obviously, this can be done only in C++
-void swap4(void)
-{
-  std::swap(a, b);
-}
-```
-
-However, your compilers have a flag to optimize your code (-O3 for gcc, clang,
-icc, /O2 for Microsoft Visual C++).
+However, your compilers have a flag to optimize your code (`-O3` for gcc, clang,
+icc, `/O2` for Microsoft Visual C++).
 
 As you can see in this website: <https://godbolt.org/g/FdAjKr>, the result code
 of `swap1` and `swap4` are always the same or much better than `swap2` and
@@ -109,3 +77,4 @@ like `swap1` did or, for better and smarter code, uses `std::swap` if you are
 writing C++ code.
 
 It's smarter to use whatever compiler give you.
+

@@ -10,7 +10,7 @@ tags: [cpp]
 ---
 
 From my own experience as the interviewee, those questions is unacceptable to me,
-I admit that I hate those questions, and I hate the interviewer, too.
+I admit that I hate those questions, and I hate the interviewers, too.
 <!--excerpt-->
 
 ### I have some C/C++ questions for you!"
