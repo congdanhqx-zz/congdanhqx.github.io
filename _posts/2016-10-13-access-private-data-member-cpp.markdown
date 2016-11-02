@@ -5,6 +5,7 @@ date: 2016-10-13 21:25:00 +07:00
 categories: programming
 tags: [cpp, trick, template]
 ---
+<!--excerpt-->
 
 ```cpp
 #include <iostream>
@@ -54,7 +55,6 @@ int main()
 }
 ```
 
-Credited to [http://bloglitb.blogspot.com/2011/12/access-to-private-members-safer.html][1]
+Credited to <http://bloglitb.blogspot.com/2011/12/access-to-private-members-safer.html>
 
 
-  [1]: http://bloglitb.blogspot.com/2011/12/access-to-private-members-safer.html

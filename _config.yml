@@ -17,6 +17,8 @@ twitter_username: congdanhqx
 github_username:  congdanhqx
 comments: true
 
+excerpt_separator: <!--excerpt-->
+
 # Build settings
 markdown: kramdown
 sass:

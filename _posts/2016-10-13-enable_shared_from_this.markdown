@@ -8,9 +8,12 @@ tags: [cpp, smart-pointer]
 ---
 
 I have had a hard time to understand why do we need
-`std::enable_shared_from_this`. After reading [std::enable_shared_from_this][1],
+`std::enable_shared_from_this`. After reading
+[std::enable_shared_from_this](http://en.cppreference.com/w/cpp/memory/enable_shared_from_this),
 I still wonder why we need to have `std::enable_shared_from_this` because the
 example in that page call `getptr()` from a `std::shared_ptr`:
+
+<!--excerpt-->
 
 ```cpp
 #include <memory>
@@ -84,5 +87,3 @@ int main()
 }
 ```
 
-
-  [1]: http://en.cppreference.com/w/cpp/memory/enable_shared_from_this

@@ -15,6 +15,7 @@ int foo(int *a, int *b) {
   return *a * *b;
 }
 ```
+<!--excerpt-->
 
 Question! When we call `foo(a_pointer_to_int, another_pointer_to_int)`, can you
 guess the result?
@@ -62,6 +63,7 @@ int foo(int * restrict a, int * restrict b) {
   return *a * *b;
 }
 ```
+
 The programmers promise to compiler that `a` and `b` will point to different
 object of `int` when they call `foo`. Thus, it can be optimized as:
 
@@ -72,11 +74,13 @@ int foo(int * restrict a, int * restrict b) {
   return 42;
 }
 ```
+
 In this example:
 
 ```c
 char* char_cpy(char * restrict dest, char * restrict src, size_t size);
 ```
+
 The programmers promise to compiler that `dest` and `src` won't intersect
 with each other when they call `char_cpy`. It means that `[dest, dest + size)`
 and `[src, src + size)` won't intersect with each other. Thus, that `char_cpy`
@@ -89,6 +93,7 @@ char* char_cpy(char * restrict dest, char * restrict src, size_t size) {
   }
 }
 ```
+
 And compilers have their free to optimize that above code. Without `restrict`, we need
 to do a lot of stuff to make this function work correctly.
 

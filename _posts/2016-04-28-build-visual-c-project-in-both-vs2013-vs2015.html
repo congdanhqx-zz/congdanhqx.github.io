@@ -1,0 +1,45 @@
+---
+layout: post
+title: Build Visual C++ project in both VS2013 & VS2015
+date: 2016-04-28 04:13:58.000000000 +07:00
+type: post
+published: true
+status: publish
+categories: programming
+tags: [cpp, ci, msvc]
+---
+
+<p><a href="https://github.com/congdanhqx/numberstringify" target="_blank">My project</a> was required to build with VS2013, however I want to open and build it with VS 2015.</p>
+<!--excerpt-->
+<p>After some research, I found those blogs:</p>
+<ul>
+<li><a href="https://blogs.msdn.microsoft.com/webdev/2012/08/21/visual-studio-project-compatibility-and-visualstudioversion/" target="_blank">https://blogs.msdn.microsoft.com/webdev/2012/08/21/visual-studio-project-compatibility-and-visualstudioversion</a></li>
+</ul>
+<p>However, when I put:</p>
+<pre class="brush: xml;">&lt;PropertyGroup&gt;
+  &lt;VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''"&gt;10.0&lt;/VisualStudioVersion&gt;
+  &lt;VSToolsPath Condition="'$(VSToolsPath)' == ''"&gt;$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)&lt;/VSToolsPath&gt;
+&lt;/PropertyGroup&gt;
+&lt;!-- Visual Studio 2010 (10.0) --&gt;
+&lt;PropertyGroup Condition="'$(VisualStudioVersion)' == '10.0'"&gt;
+  &lt;PlatformToolset&gt;v100&lt;/PlatformToolset&gt;
+&lt;/PropertyGroup&gt;
+&lt;!-- Visual Studio 2012 (11.0) --&gt;
+&lt;PropertyGroup Condition="'$(VisualStudioVersion)' == '11.0'"&gt;
+  &lt;PlatformToolset&gt;v110&lt;/PlatformToolset&gt;
+&lt;/PropertyGroup&gt;
+&lt;!-- Visual Studio 2013 (12.0) --&gt;
+&lt;PropertyGroup Condition="'$(VisualStudioVersion)' == '12.0'"&gt;
+ &lt;PlatformToolset&gt;v120&lt;/PlatformToolset&gt;
+&lt;/PropertyGroup&gt;
+&lt;!-- Visual Studio 2015 (14.0) --&gt;
+&lt;PropertyGroup Condition="'$(VisualStudioVersion)' == '14.0'"&gt;
+ &lt;PlatformToolset&gt;v140&lt;/PlatformToolset&gt;
+&lt;/PropertyGroup&gt;
+&lt;!-- End of: Switch the PlatformToolset based on the Visual Studio Version --&gt;</pre>
+<p>in my <code>vcxproj</code>, it still invokes <code>MSBuild v120</code>, which isn't what expected.</p>
+<p>After some try, I found that I need to put these line after:</p>
+<pre>&lt;Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" /&gt;
+</pre>
+<p>and before all other <code>Import</code></p>
+<p>Then it works!</p>
