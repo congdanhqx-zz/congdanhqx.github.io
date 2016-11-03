@@ -15,9 +15,15 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://congdanhqx.github.io" # the base hostname & protocol for your site
 twitter_username: congdanhqx
 github_username:  congdanhqx
+stackoverflow_id: 4115625
+linkedin: //vn.linkedin.com/in/congdanhqx
+skype_id: congdanhqx
 comments: true
 
 excerpt_separator: <!--excerpt-->
+paginate: 5
+paginate_path: "/blog/page:num/"
+
 
 # Build settings
 markdown: kramdown
