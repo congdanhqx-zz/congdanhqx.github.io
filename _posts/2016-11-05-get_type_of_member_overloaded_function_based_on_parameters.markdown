@@ -31,5 +31,6 @@ int main() {
                         decltype(MethodInfo<Foo, int>::get(&Foo::foo))
                           >::value, "");
 }
+```
 
 [1]: http://stackoverflow.com/a/40434788/4115625
