@@ -4,7 +4,7 @@ layout: post
 date: 2016-11-05 15:47:00 +07:00
 author: ĐOÀN Trần Công Danh
 categories: programming
-tags: [cpp, smart-pointer]
+tags: [cpp, template]
 ---
 
 It's my [answer on stack overflow][1]
@@ -33,4 +33,4 @@ int main() {
 }
 ```
 
-[1]: http://stackoverflow.com/a/40434788/4115625
+[1]: //stackoverflow.com/a/40434788/4115625
