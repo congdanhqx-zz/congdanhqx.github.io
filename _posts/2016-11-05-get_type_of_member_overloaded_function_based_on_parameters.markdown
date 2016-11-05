@@ -1,7 +1,7 @@
 ---
 title: Get type of member function from its parameter
 layout: post
-date: 2016-10-13 20:00:00 +07:00
+date: 2016-11-05 15:47:00 +07:00
 author: ĐOÀN Trần Công Danh
 categories: programming
 tags: [cpp, smart-pointer]
