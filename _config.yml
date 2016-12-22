@@ -6,11 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: ĐOÀN Trần Công Danh - A Software Developer
+title: congdanhqx
 email: congdanhqx@live.com
 description: > # this means to ignore newlines until "baseurl:"
-  Just something I don't want to forget. Something about programing, especially
-  C++ stuff. Some stupid stuff should also be expected to appear here.
+  Just something I don't want to forget.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://congdanhqx.github.io" # the base hostname & protocol for your site
 twitter_username: congdanhqx
@@ -19,6 +18,7 @@ stackoverflow_id: 4115625
 linkedin: //vn.linkedin.com/in/congdanhqx
 skype_id: congdanhqx
 comments: true
+theme: jekyll-theme-hacker
 
 excerpt_separator: <!--excerpt-->
 paginate: 5

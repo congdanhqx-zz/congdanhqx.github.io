@@ -2,17 +2,23 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-wrapper">
       <div class="footer-col footer-col-1">
         <ul class="contact-list">
-          <li>{{ site.title }}</li>
+          {% for my_page in site.pages %}
+            {% if my_page.title %}
+              <li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+            {% endif %}
+          {% endfor %}
+          <li>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></li>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
       </div>
 
       <div class="footer-col footer-col-2">
+      </div>
+
+      <div class="footer-col footer-col-3">
         <ul class="social-media-list">
           {% if site.github_username %}
           <li>
@@ -30,19 +36,15 @@
             {% include icon-stackoverflow.html %}
 
             {% if site.linkedin %}
-            <a href="{{ site.linkedin }}"><span class="icon-linkedin"></span></a>
+            <a href="{{ site.linkedin }}"><span class="icon icon-linkedin">{% include icon-linkedin.svg %}</span></a>
             {% endif %}
 
             {% if site.skype_id %}
-            <a href="skype:{{ site.skype_id }}"><span class="icon-skype"></span></a>
+            <a href="skype:{{ site.skype_id }}"><span class="icon icon-skype">{% include icon-skype.svg %}</span></a>
             {% endif %}
 
           </li>
         </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
       </div>
     </div>
 

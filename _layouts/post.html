@@ -3,7 +3,7 @@ layout: default
 ---
 <!-- from http://www.minddust.com/post/alternative-tags-and-categories-on-github-pages/ -->
 {% if page.categories.size > 0 %}
-  {% capture categories_content %} <span class="icon-folder-open"></span>{% endcapture %}
+  {% capture categories_content %} <span class="icon icon-folder-open">{% include icon-folder-open.svg %}</span>{% endcapture %}
   {% for post_category in page.categories %}
     {% assign category = site.my_categories | where: "slug", post_category %}
     {% if category %}
@@ -14,7 +14,16 @@ layout: default
   {% endfor %}
 {% endif %}
 {% if page.tags.size > 0 %}
-  {% capture tags_content %} <span class="icon-price-tag{% if page.tags.size > 1 %}s{% endif %}"></span> {% endcapture %}
+  {% if page.tags.size > 1 %}
+    {% capture tags_content %}
+      <span class="icon icon-price-tags">{% include icon-price-tags.svg %}</span>
+    {% endcapture %}
+  {% else %}
+    {% capture tags_content %}
+      <span class="icon icon-price-tag">{% include icon-price-tag.svg %}</span>
+    {% endcapture %}
+  {% endif %}
+
   {% for post_tag in page.tags %}
     {% assign tag = site.my_tags | where: "slug", post_tag %}
     {% if tag %}
@@ -29,7 +38,7 @@ layout: default
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><span class="icon-calendar"></span><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>{% if page.author %} <span class="icon-quill"></span><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}{{ categories_content }}{{ tags_content }}</p>
+    <p class="post-meta"><span class="icon icon-calendar">{% include icon-calendar.svg %}</span><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%Y-%m-%d" }}</time>{% if page.author %} <span class="icon icon-quill">{% include icon-quill.svg %}</span><span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}{{ categories_content }}{{ tags_content }}</p>
   </header>
 
   <div class="post-content" itemprop="articleBody">
